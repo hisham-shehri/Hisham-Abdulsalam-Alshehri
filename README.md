@@ -1,4 +1,3 @@
 # Git & GitHub Homework
 
-Student Name: Hisham Alshehri
-Course: Foundation Bootcamp – Programming Track
+This file is for practicing Git and GitHub commands.
