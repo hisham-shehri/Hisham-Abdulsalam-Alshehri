@@ -1,0 +1,67 @@
+BEGIN
+
+PRINT "Welcome to Account Registration System"
+
+SET data_is_valid = FALSE
+SET code_correct = FALSE
+
+PRINT "Create New Account"
+
+WHILE data_is_valid = FALSE
+
+    PRINT "Enter Full Name:"
+    READ full_name
+
+    PRINT "Enter Email Address:"
+    READ email
+
+    PRINT "Enter Phone Number:"
+    READ phone
+
+    PRINT "Enter Password:"
+    READ password
+
+    PRINT "Confirm Password:"
+    READ confirm_password
+
+    IF full_name is empty THEN
+        PRINT "Error: Name is required"
+
+    ELSE IF email does not contain "@" THEN
+        PRINT "Error: Invalid Email"
+
+    ELSE IF phone is not 10 digits THEN
+        PRINT "Error: Invalid Phone Number"
+
+    ELSE IF password != confirm_password THEN
+        PRINT "Error: Passwords do not match"
+
+    ELSE
+        SET data_is_valid = TRUE
+        PRINT "All Data Valid"
+    ENDIF
+
+ENDWHILE
+
+PRINT "Sending Verification Code..."
+
+SET verification_code = 1234
+
+WHILE code_correct = FALSE
+
+    PRINT "Enter Verification Code:"
+    READ entered_code
+
+    IF entered_code = verification_code THEN
+        SET code_correct = TRUE
+        PRINT "Account Activated Successfully"
+
+    ELSE
+        PRINT "Error: Incorrect Code"
+    ENDIF
+
+ENDWHILE
+
+PRINT "Registration Completed"
+
+END
